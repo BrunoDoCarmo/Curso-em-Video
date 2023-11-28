@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PAIS</title>
+  </head>
+  <body>
+    Coloque um pais:
+    <select
+      class="form-select"
+      aria-label="Default select example"
+      name="txtpais"
+      id="txtpais"
+    >
+      <option value="Brasil">Brasil</option>
+      <option value="Paraguay">Paraguay</option>
+    </select>
+    <input type="button" value="Verificar" onclick="verificar()" />
+    <div id="respais"></div>
+    <script>
+      function verificar() {
+        var txtp = window.document.querySelector('select#txtpais').value
+        var resp = window.document.querySelector('div#respais')
+        resp.innerHTML = `<p>O pais que você digitou é <strong>${txtp}</strong>!</p>`
+        if (txtp == 'Brasil') {
+          resp.innerHTML += `<p>Você é brasileiro!</p>`
+        } else {
+          resp.innerHTML += `<p>Você é estrangeiro!</p>`
+        }
+      }
+    </script>
+  </body>
+</html>
